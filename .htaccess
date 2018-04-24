@@ -1,0 +1,11 @@
+Options -MultiViews
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ index.php?medium=$1 [L,NC,QSA]
+
+
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://blog.diegopeixoto.net/$1 [R,L]
